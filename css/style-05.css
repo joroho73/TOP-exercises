@@ -1,0 +1,21 @@
+/*
+descendent combinators will work in any combination of 
+class or selector, for example all of the following have
+the same effect
+
+div p
+.container .text
+div .test
+.container p
+
+*/
+
+
+
+
+div p {
+    background-color: yellow;
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
