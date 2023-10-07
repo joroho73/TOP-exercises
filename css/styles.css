@@ -1,0 +1,28 @@
+body{
+    background-color: antiquewhite;
+}
+li {
+    background-color: darkgoldenrod;
+    display: inline-block;
+    padding: 8px ;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 2px 0px;
+    border: 1px solid darkgreen;
+}
+li:hover{
+    background-color: grey;
+}
+
+li:hover a{
+    color: inherit;
+}
+
+a {
+    color:darkslategrey;
+    text-decoration: none;;
+}
+a:hover {color:lightgrey;}
+
+h1 {font-family: sans-serif;}
+h2 {font-family: sans-serif;}
