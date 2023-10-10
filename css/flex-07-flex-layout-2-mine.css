@@ -2,9 +2,9 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     min-height: 100vh;
-    /* solution */
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
   }
 
   .border {border: 3px solid red;}
@@ -13,20 +13,18 @@ body {
     height: 72px; 
     background: darkmagenta;
     color: white;
-    /* solution */
-    display: flex;
-    align-items: center;
     font-size: 32px;
     font-weight: 900;
-    padding: 0 16px;
-  
+    text-align: left;
+    padding: 16px;
+    display: flex;
+    align-items: center;
   }
   
   .footer {
     height: 72px;
     background: #eee;
     color: darkmagenta;
-    /* solution */
     justify-content: center;
     align-items: center;
     display:flex 
@@ -36,9 +34,7 @@ body {
     width: 300px;
     background: royalblue;
     box-sizing: border-box;
-    /* solution */
     flex-shrink: 0;
-    padding: 16px;
   }
   
   .card {
@@ -46,20 +42,12 @@ body {
     box-shadow: 2px 4px 16px rgba(0,0,0,.06);
     border-radius: 4px;
     width: 300px;
-    /* solution */
-    padding: 16px;
-    margin: 16px;
-    width: 300px;
   }
 
   .main-body {
     display: flex;
-    flex: 1;
-    border: 1px solid red;
-    /*
     flex-direction: column;
     justify-content: space-between;
-    */
   }
 
   .main-content {
@@ -70,13 +58,11 @@ body {
 
   .content {
     padding: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    /*
     gap: 32px;
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     flex-grow: 10;
-    */
   }
 
   a {
@@ -87,10 +73,4 @@ body {
 
   ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    margin-bottom: 16px;
   }

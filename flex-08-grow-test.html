@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Cheat Sheet</title>
+    <link rel="stylesheet" href="css/flex-08-grow-test.css"/>
+</head>
+<body>
+    <div class="header yellowgreen">header</div>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><strong class="goldenrod">sidebar</strong></li>
+                <li>menu one</li>
+                <li>menu two</li>
+                <li>menu three</li>
+                <li>menu four</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="intro border">
+                <h1 class="dsg">Hello</h1>
+                <p>I've put this page together as a quick reference for creating a <strong class="dsg">Holy Grail</strong> layout.</p>
+                <p>Each of the cards below relate to <strong class="dsg">&lt;div&gt;</strong> elements on this page. The css styles on each card include the bare minimum styles to create this layout.</p>
+                <p>The colour of each card's title relates to the border color of the &lt;div&gt;.</p>
+                <hr />
+                <p><i class="dsg">Note:</i> the style used to pin this section to the top with a 100% width is:</p>
+                <p class="dsg indent-10">{ flex-basis:100% }</p>
+
+                </p> 
+            </div>
+            <div class="card">
+                <strong class="red">.body</strong> 
+                <div class="indent-10">{</div>
+                <div class="indent-20">min-height: 100vh; </div>
+                <div class="indent-20">display: flex;</div>
+                <div class="indent-20">flex-direction: column;</div>
+                <div class="indent-10">{</div>
+            </div>                
+                <div class="card">
+                    <strong class="yellowgreen">.header</strong> 
+                    <div class="indent-10">{</div>
+                    <div class="indent-20">display: flex;</div>
+                    <div class="indent-20">align-items: center;</div>
+                    <div class="indent-10">{</div>
+                </div>
+                <div class="card">
+                    <strong class="green">.container</strong> 
+                    <div class="indent-10">{</div>
+                    <div class="indent-20">display: flex;</div>
+                    <div class="indent-20">flex: 1;</div>
+                    <div class="indent-10">{</div>
+                </div>
+                <div class="card">
+                    <strong class="goldenrod">.sidebar</strong> 
+                    <div class="indent-10">{</div>
+                    <div class="indent-20">flex-shrink: 0;</div>
+                    <div class="indent-10">{</div>
+                </div>
+                <div class="card">
+                    <strong class="blue">.content</strong> 
+                    <div class="indent-10">{</div>
+                    <div class="indent-20">display: flex;</div>
+                    <div class="indent-20">flex-direction: row;</div>
+                    <div class="indent-20">flex-wrap: wrap;</div>
+                    <div class="indent-10">{</div>
+                </div>
+                <div class="card">
+                    <strong class="coral">.footer</strong> 
+                    <div class="indent-10">{</div>
+                    <div class="indent-20">display: flex;</div>
+                    <div class="indent-10">{</div>
+                </div>
+          </div>
+    </div>
+    <div class="footer border"><strong>footer</strong></div>
+</body>
+</html>
