@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Element Object</h1>
+<h2>The addEventListener() Method</h2>
+
+<p>Execute a function when a user clicks on a button:</p>
+
+<button id="myBtn">Try it</button>
+
+<p id="demo">
+
+<script>
+const element = document.getElementById("myBtn");
+element.addEventListener("click", myFunction);
+
+const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
+
+function myFunction() {
+    const random = Math.floor(Math.random() * names.length);
+  document.getElementById("demo").innerHTML = names[random];
+}
+</script>
+
+</body>
+</html>
