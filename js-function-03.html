@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Functions: Task 3</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+        <div></div>
+        <p>this will change</p>
+        <button>Choose random name</button>
+
+
+
+    </section>
+
+  </body>
+  <script>
+    const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
+
+    div = document.querySelector('div');
+    div.textContent = 'Names: ' + names.toString();
+
+    btn = document.querySelector('button');
+    btn.addEventListener('click', chooseName());
+    //btn.addEventListener('click', test);
+
+    function chooseName(arr = names) {
+        para = document.querySelector('p')
+        para.textContent = 'Random Name is: ' + arr[random(0,arr.length)];
+    }
+
+    function random(min, max) {
+        const r = Math.floor(Math.random() * max);
+        return r;
+    }
+
+    function test(){
+        console.log('ttest')
+    }
+
+    //chooseName(names);
+
+
+
+
+    // Don't edit the code below here!
+
+   // const section = document.querySelector('section');
+
+    //section.appendChild(para);
+  </script>
+
+</html>
