@@ -31,14 +31,11 @@
   <script>
     const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
 
-    div = document.querySelector('div');
-    div.textContent = 'Names: ' + names.toString();
-
-    btn = document.querySelector('button');
-    btn.addEventListener('click', chooseName());
-    //btn.addEventListener('click', test);
-
-    function chooseName(arr = names) {
+     function clickButton(){
+      chooseName(names);
+    }
+    
+    function chooseName(arr) {
         para = document.querySelector('p')
         para.textContent = 'Random Name is: ' + arr[random(0,arr.length)];
     }
@@ -47,6 +44,16 @@
         const r = Math.floor(Math.random() * max);
         return r;
     }
+
+    div = document.querySelector('div');
+    div.textContent = 'Names: ' + names.toString();
+
+    btn = document.querySelector('button');
+       btn.addEventListener('click', () => chooseName(names));
+    //  originally
+    // btn.addEventListener('click', clickButton);
+
+ 
 
     function test(){
         console.log('ttest')
