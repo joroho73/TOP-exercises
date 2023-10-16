@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Functions: Task 4</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+    <div><p>In this task, we have an array of names, and we're using Array.filter() to get an array of only names shorter than 5 characters. The filter is currently being passed a named function isShort() which checks the length of the name, returning true if the name is less than 5 characters long, and false otherwise.</p>
+    <p>We'd like you to change this into an arrow function. See how compact you can make it.</p></div>
+
+  </body>
+  <script>
+    const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada'];
+    let section = document.querySelector('section');
+
+    const para1 = document.createElement('p');
+    para1.textContent ="all names: " + names;
+    section.appendChild(para1);
+
+    
+
+    
+
+    
+
+    let para = document.createElement('p');    
+
+    function isShort(name) {
+      return name.length < 5;
+    }
+
+    let shortNames = '';
+
+    // original
+    shortNames = names.filter(isShort);
+    const p1 = document.createElement('p');
+    p1.innerHTML = "original list reduction using a function list<br>";
+    p1.innerHTML += "<strong>function isShort(name) {...};<br>names.filter(isShort);</strong> <br>";
+    p1.innerHTML += shortNames + "<hr>";
+    section.appendChild(p1);
+
+    
+    // first change, add anonymous function
+    shortNames = names.filter(function(name) {
+        return name.length < 5;
+    });
+
+    const p2 = document.createElement('p');
+    p2.innerHTML = "first change, add annoymous function<br>" 
+    p2.innerHTML += "<strong>names.filter(function(name) {...})</strong> <br>";
+    p2.innerHTML += shortNames + "<hr>";
+    section.appendChild(p2);
+   
+
+    //second change, create arrow function
+    shortNames = names.filter((name) => {
+        return name.length < 5;
+    });
+
+    const p3 = document.createElement('p');
+    p3.innerHTML = "second change, add arrow function<br>";
+    p3.innerHTML += "<strong>names.filter((name) => {...})</strong><br>";
+    p3.innerHTML += + shortNames + "<hr>";
+    section.appendChild(p3);
+
+    // third change, because the function only takes one parameter, 
+    // I can omit the parenthesis around the parameter
+    const p4 = document.createElement('p');
+    shortNames = names.filter(name => {
+        return name.length < 5;
+    });
+    p4.innerHTML = "third change, remove parenthesis (because there is one parameter)<br>";
+    p4.innerHTML += "<strong>names.filter(name => {...})</strong><br>";
+    p4.innerHTML += shortNames + "<hr>";
+    section.appendChild(p4);
+
+
+
+
+
+
+
+
+
+
+    // Don't edit the code below here!
+
+  
+ 
+  </script>
+
+</html>
