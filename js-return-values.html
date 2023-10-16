@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Function library example</title>
+  <style>
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0;
+    }
+  </style>
+  </head>
+<body>
+    <h1> return values</h1>
+    <div>add a value to the text block below, and click return</div>
+
+  <input class="numberInput" type="text">
+  <p></p>
+  <p class="para1"></p>
+
+  <script>
+    const input = document.querySelector('.numberInput');
+    const para = document.querySelector('p');
+    const para1 = document.querySelector('.para1');
+
+    function squared(num) {
+        return num * num;
+    }
+
+    function cubed(num) {
+        return num * num * num;
+    }
+
+    function factorial(num) {
+        if (num < 0) return undefined;
+        if (num === 0) return 1;
+        let x = num - 1;
+        while (x > 1) {
+            num *= x;
+            x--;
+        }
+        return num;
+    }
+
+    function squareRoot(num) {
+        if (isNaN(num)) {
+            return "not possible";
+        } else {
+            return Math.sqrt(num);
+        }
+    }
+
+    function circum (num){
+        console.log(num);
+        if (isNaN(num)) {
+            return "not possible with a string";
+        } else {
+            return 2 * Math.PI * num;
+        }
+    }
+
+    input.addEventListener("change", () => {
+        const num = parseFloat(input.value);
+        if (isNaN(num)) {
+            para.textContent = "You need to enter a number!";
+            para1.textContent = `the square root of ${input.value} is ${squareRoot(num)}.`;
+            para1.textContent += `The circumference of a circle with radius ${input.value} is ${circum(num)}`;
+
+        } else {
+            para.textContent = `Your number is: ${num}. `;
+            para.textContent += `${num} squared is ${squared(num)}. `;
+            para.textContent += `${num} cubed is ${cubed(num)}. `;
+            para.textContent += `${num} factorial is ${factorial(num)}. `;
+            para1.textContent = `The square root of ${num} is ${squareRoot(num)}. `;
+            para1.textContent += `The circumference of a circle with radius ${num} is ${circum(num)}`;
+  }
+});
+
+
+
+sum = (a, b) => {  // the curly brace opens a multiline function
+  let result = a + b;
+  return result; // if we use curly braces, then we need an explicit "return"
+};
+
+alert( sum(1, 2) ); // 3
+  </script>
+</body>
+</html>

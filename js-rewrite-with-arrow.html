@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Function library example</title>
+  <style>
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0;
+    }
+  </style>
+  </head>
+<body>
+
+
+  <script>
+function ask(question, yes, no) {
+  if (confirm(question)) yes();
+  else no();
+}
+
+// original
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+
+//Replace Function Expressions with arrow functions in the code below:
+ask(
+  "Do you agree?",
+  () => { alert("You agreed."); },
+  () => { alert("You canceled the execution."); }
+);
+
+</script>
+</body>
+</html>
