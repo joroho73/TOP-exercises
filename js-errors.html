@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errors</title>
+</head>
+<body>
+    <script>
+
+//ReferenceError
+//c not declared
+const a = 5;
+const b = 10;
+
+function add() {
+//  return c;
+}
+
+function print() {
+  add();
+}
+
+print();
+
+//SyntaxError
+//missing ()
+// function helloWorld() {
+//   console.log "Hello World!"
+// }
+
+//Type Error
+//.push is not a function (should be .concat())
+const str1 = "Hello";
+const str2 = "World!";
+const message = str1.push(str2);
+
+    </script>
+    
+</body>
+</html>
