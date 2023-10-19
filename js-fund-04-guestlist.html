@@ -29,6 +29,9 @@ body {
 <body>
     <p class="admitted"></p>
     <p class="refused"></p>
+    <hr>
+    <p class="admitted1"></p>
+    <p class="refused1"></p>
 
     <script>
         const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
@@ -60,6 +63,25 @@ body {
 
         // refused.textContent += ;
         // admitted.textContent += ;
+
+
+        // solution
+
+        const admitted1 = document.querySelector('.admitted1');
+        const refused1 = document.querySelector('.refused1');
+        admitted1.textContent = 'Admit(1): ';
+        refused1.textContent = 'Refuse(1): ';
+
+        for (const person of people) {
+            if (person === 'Phil' || person === 'Lola') {
+                refused1.textContent += `${person}, `;
+            } else {
+                admitted1.textContent += `${person}, `;
+            }
+        }
+
+        refused1.textContent = refused1.textContent.slice(0, refused1.textContent.length - 2) + ".";
+        admitted1.textContent = admitted1.textContent.slice(0, admitted1.textContent.length - 2) + ".";
 
     </script>
     
