@@ -26,7 +26,7 @@
 
   </body>
   <script>
-    const name = 'Mustafa';
+    const name = 'Tina';
     const para = document.createElement('p');
 
     const phonebook = [
@@ -45,13 +45,16 @@
 
     i = 0;
     while (i < phonebook.length ){
-        console.log(phonebook[i].name);
+        //console.log(phonebook[i].name);
         if ( phonebook[i].name === name){
             para.innerText = `Name: ${phonebook[i].name},
                               Number: ${phonebook[i].number}`;
             break;
         }
         i++
+        if(i === phonebook.length - 1) {
+        para.textContent = `\"${name}\" not found in the phonebook`;
+        }
     }
 
     // Don't edit the code below here!
