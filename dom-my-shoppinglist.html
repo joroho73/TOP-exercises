@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+
+
+    <style>
+
+        body {
+            padding: 20px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;    
+        }
+
+        li {  margin-bottom: 10px;}
+
+        li button {
+            font-size: 8px;
+            margin-left: 20px;
+            color: #666;
+        }
+    
+
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        const ul = document.querySelector('ul');
+        const input = document.querySelector('#item');
+        const inputButton = document.querySelector('button');
+
+        function buttonClick(){
+            value = input.value;
+            console.log(value);
+            input.value = '';
+            const li = document.createElement('li');   
+            const span = document.createElement('span');
+            const button = document.createElement('button');
+            span.textContent = value;
+            button.textContent = 'Delete';
+
+            li.appendChild(span);
+            li.appendChild(button);
+
+            ul.appendChild(li);
+
+            button.addEventListener(('click'), () => {
+                ul.removeChild(li);
+                input.focus();
+            })
+
+            input.focus();
+        }
+
+        inputButton.addEventListener(('click'), buttonClick);
+
+
+    </script>
+  </body>
+</html>
