@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Object</title>
+</head>
+<body>
+    <H1>Hello Object</H1>
+    <p>Exercises taken from <a href="https://javascript.info/object">javascript.info/object</a></p>
+    <hr>
+    <pre>
+    let user = {};
+    user.name = "John";
+    user.surname = "Smith";
+    </pre>
+    <button class="click1">Click Me to View Object</button>
+    <hr>
+    
+    <p>Change user name.</p>
+    <pre>
+    user.name = prompt("enter name");
+    </pre>
+    <button class="click2">Click me to change name</button>
+    <hr>
+
+    <p>Delete name.</p>
+    <pre>
+    delete user.name
+    </pre>
+    <button class="click3">Click me to Delete name</button>
+    <hr>
+
+    <h1>Check for Emptiness</h1>
+    <p>Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.</p>
+
+    <pre>
+    let schedule = {};
+    alert( isEmpty(schedule) ); // true
+
+    schedule["8:30"] = "get up";
+    alert( isEmpty(schedule) ); // false
+    </pre>
+    <button class="createSchedule">Create Empty Schedule</button>
+    <button class="loadSchedule">Load Schedule</button>
+    <button class="checkSchedule">Is Schedule Empty?</button>
+    <button class="viewSchedule">View Schedule</button>
+    <button class="deleteSchedule">Delete Schedule</button>
+
+    <script>
+        let user = {};
+        user.name = "John";
+        user.surname = "Smith";
+        
+        const button1 = document.querySelector('.click1');
+        button1.addEventListener('click', () => showObject(user));
+
+        const button2 = document.querySelector('.click2');
+        button2.addEventListener('click', () => {
+            user.name = prompt("enter name...");
+            showObject(user);
+        });
+
+        const button3 = document.querySelector('.click3');
+        button3.addEventListener('click', () => {
+            delete user.name;
+            showObject(user);
+        });
+
+        const createSchedule = document.querySelector('.createSchedule');
+        createSchedule.addEventListener('click', () => {
+            globalThis.schedule = {};
+            alert("schedule = {}");
+        })
+
+        const loadSchedule = document.querySelector('.loadSchedule');
+        loadSchedule.addEventListener('click', () => {
+            globalThis.schedule["8:30"] = "get up!";
+            showObject(schedule)
+        })
+
+        const checkSchedule = document.querySelector('.checkSchedule');
+        checkSchedule.addEventListener('click', () => isObjectEmpty(schedule));
+
+        const viewSchedule = document.querySelector('.viewSchedule');
+        viewSchedule.addEventListener('click', () => showObject(schedule));
+
+        const deleteSchedule = document.querySelector('.deleteSchedule');
+        deleteSchedule.addEventListener('click', () => {
+            globalThis.schedule = {};
+            showObject(schedule)
+        })
+
+        function isObjectEmpty(objectName){
+            alert (
+                objectName &&
+                Object.keys(objectName).length === 0 &&
+                objectName.constructor === Object
+  );
+};
+   
+
+        function showObject(obj){
+            for (let prop in obj){
+                alert(`${prop} : ${obj[prop]}`);
+            }
+        }
+
+
+
+    </script>    
+</body>
+</html>
