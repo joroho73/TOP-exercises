@@ -46,8 +46,105 @@
     <button class="checkSchedule">Is Schedule Empty?</button>
     <button class="viewSchedule">View Schedule</button>
     <button class="deleteSchedule">Delete Schedule</button>
+    <hr>
 
+    <h1>Sum object properties</h1>
+    <p>We have an object storing salaries of our team:</p>
+    <pre>
+    let salaries = {
+        John: 100,
+        Ann: 160,
+        Pete: 130
+        }
+    </pre>
+    <p>Write the code to sum all salaries and store in the variable sum. Should be 390 in the example above.</p>
+    <p>If salaries is empty, then the result must be 0.</p>
+    <h3>solution</h3>
+    <pre>
+    let sum = '';
+
+    function sumSalaries(obj){
+        sum = 0;
+        for (let prop in obj){
+            sum += obj[prop]
+        }
+        return sum;
+    }
+
+    alert(sumSalaries(salaries));
+    </pre>
+    <button class="salariesBtn">Sum Salaries</button>
+    <pre>
+        let emptySalaries = {}
+    </pre>
+    <button class="emptySalariesBtn">Sum Empty Salaries</button>
+    <hr>
+    <h1>Multiply numeric property values by 2</h1>
+    <p>Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.</p>
+    <pre>
+    let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu"
+      };
+      
+      multiplyNumeric(menu);
+      
+      // after the call
+      menu = {
+        width: 400,
+        height: 600,
+        title: "My menu"
+      };
+    </pre>
+    <button class="multiplyButton">Multiply numeric properties by 2</button>
     <script>
+        let menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        };
+
+        function multiplyNumeric(obj){
+            for (let prop in obj){
+                if (typeof obj[prop] === "number"){
+                    obj[prop] *= 2
+                }
+            } 
+
+            showObject(obj);
+        }
+
+        const multiplyButton = document.querySelector('.multiplyButton');
+        multiplyButton.addEventListener('click', () => {
+            showObject(menu);
+            multiplyNumeric(menu);
+
+        })
+
+
+        const emptySalariesButton = document.querySelector('.emptySalariesBtn');
+        emptySalariesButton.addEventListener('click', () =>{
+            sumSalaries(emptySalaries);
+
+        })
+
+        let sum = '';
+        let emptySalaries = {}
+        let salaries = {
+            John: 100,
+            Ann: 160,
+            Pete: 130
+            }
+
+        function sumSalaries(obj){
+            sum = 0;
+            for (let prop in obj){
+                sum += obj[prop]
+            }
+            return sum;
+        }
+
         let user = {};
         user.name = "John";
         user.surname = "Smith";
