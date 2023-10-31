@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Object basics: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    let bandInfo;
+
+    // Add your code here
+ const band = {
+  name: "Red Hot Chili Peppers",
+  nationality: "ameeerican",
+  genre: "funk rock",
+  members: 4,
+  formed: 1980,
+  split: false,
+  albums: [
+    {
+      name: "Mothers Milk",
+      released: 1981,
+    },
+    {
+      name: "REd hot Chili pepers",
+      released: 1941,
+    }
+  ]
+ }
+
+ bandInfo = `The band is called ${band.name},
+            they are ${band.nationality}
+            and they have been around since ${band.formed}
+            Their fist album was ${band.albums[0].name},
+            which was released in ${band.albums[0].released}.
+            That is all.`;
+ 
+
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+    let para1 = document.createElement('p');
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+  </script>
+
+</html>
