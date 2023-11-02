@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Object basics: Task 4</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <pre>
+        function CreateCat(name, breed, color){
+            const obj ={}
+            this.name = name;
+            this.breed = breed;
+            this.color = color;
+            this.greeting = function() {
+                console.log(`Hello, said ${ this.name } the ${ this.breed }!!`)
+            }
+        }
+    
+        const bertie = new CreateCat('Bertie', 'cymeric', 'white');
+        const elfie = new CreateCat('elfie', 'giant', 'ginger');
+    
+        bertie.greeting();
+        elfie.greeting();
+    </pre>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  
+
+    <script>
+    function CreateCat(name, breed, color){
+        const obj ={}
+        this.name = name;
+        this.breed = breed;
+        this.color = color;
+        this.greeting = function() {
+            console.log(`Hello, said ${ this.name } the ${ this.breed }!!`)
+        }
+    }
+
+    const bertie = new CreateCat('Bertie', 'cymeric', 'white');
+    const elfie = new CreateCat('elfie', 'giant', 'ginger');
+
+    bertie.greeting();
+    elfie.greeting();
+        
+  </script>
+
+</html>
